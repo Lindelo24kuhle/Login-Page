@@ -1,47 +1,37 @@
 let loginButton = document.getElementById("login");
 let checkboxButton = document.getElementById("robot");
+let passwordField = document.getElementById("password");
+let unhideIcon = document.getElementById("unhide");
 
 let isLogin = true;
+let isRobot = true;
+
+function toggleButton(button, state1Text, state2Text, state1Color, state2Color) {
+    if (button && isLogin) {
+        button.textContent = state1Text;
+        button.style.backgroundColor = state1Color;
+    } else {
+        button.textContent = state2Text;
+        button.style.backgroundColor = state2Color;
+    }
+}
 
 function toggleLogin() {
     isLogin = !isLogin;
-
-    if (isLogin) {
-        loginButton.textContent = "Log In";
-        loginButton.style.backgroundColor = ""; 
-    } else {
-        loginButton.textContent = "Please wait...";
-        loginButton.style.backgroundColor = "green";
-    }
+    toggleButton(loginButton, "Log In", "Please wait...", "", "green");
 }
-
-let isRobot = true;
 
 function toggleRobotStatus() {
-
     isRobot = !isRobot;
-    
-    if (isRobot) {
-        checkboxButton.textContent = "You are a robot";
-        checkboxButton.style.backgroundColor = " ";
-    } else {
-        checkboxButton.textContent = "You are not a robot";
-        checkboxButton.style.backgroundColor = "blue";
-    }
+    toggleButton(checkboxButton, "You are not a robot", "You are a robot", "blue", "");
 }
 
-
-
-
 function togglePasswordVisibility() {
-    let passwordField = document.getElementById("password");
-    let unhideIcon = document.getElementById("unhide");
-
     if (passwordField.type === "password") {
         passwordField.type = "text";
-        unhideIcon.innerHTML = "&#128064;"; // Change to hide icon
+        unhideIcon.innerHTML = "&#128064;"; 
     } else {
         passwordField.type = "password";
-        unhideIcon.innerHTML = "&#128065;"; // Change to unhide icon
+        unhideIcon.innerHTML = "&#128065;"; 
     }
 }
