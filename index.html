@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <div class="main">
+        <form>
+        <div class="form">
+            <h1 id="title">Login Details</h1>
+            <div class="input-container">
+                <input type="email" id="email" placeholder="E-mail exam@email.." required/>
+            </div>
+            <div class="input-container" >
+                <input type="password" id="password" placeholder="Password"  required/>
+                <span class="unhide-icon" id="unhide" onclick="togglePasswordVisibility()">&#128065;</span>
+            </div>
+            <div class="robot">
+                <div class="tick">
+                    <p><input type="checkbox" id="robot" onclick="toogleRobob()" required/>Click here if you not a robot</p>
+                </div>
+            </div>
+            <div class="submit" style="text-align: center;" >
+                <button id="login" style="color:#eee8aa;  width: 70%;" onclick="toggleLogin()">Log In</button>
+            </div>
+        </div>
+        </form>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
